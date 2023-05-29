@@ -1,14 +1,24 @@
 import React, { FunctionComponent } from "react";
+import { useResource } from "../lib";
 // import { useLdo, useResource, useSubject } from "./hooks";
 // import { SolidProfileShapeShapeType } from "./ldo/solidProfile.shapeTypes";
 // import BlurTextInput from "./BlurTextInput";
 
 const Profile: FunctionComponent = () => {
-  return <div>Hi</div>;
   // const { startTransaction, commitTransaction } = useLdo();
-  // const webId = "https://jackson.solidcommunity.net/profile/card#me";
-  // const webIdResource = useResource(webId, { loadOnMount: true });
+  const webId = "https://jackson.solidcommunity.net/profile/card#me";
+  const [, isLoading, didInitialFetch, error] = useResource(webId, {
+    loadOnMount: true,
+  });
   // const [profile, profileError] = useSubject(SolidProfileShapeShapeType, webId);
+  console.log(isLoading, didInitialFetch, error);
+  return (
+    <div>
+      <p>isLoading: {isLoading ? "true" : "false"}</p>
+      <p>didInitialFetch: {didInitialFetch ? "true" : "false"}</p>
+      <p>error: {error?.message || "No Error"}</p>
+    </div>
+  );
 
   // if (webIdResource.isLoading) {
   //   return <p>Loading...</p>;
