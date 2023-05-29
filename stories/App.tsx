@@ -1,12 +1,17 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import Layout from "./Layout";
+import LdoProvider from "../lib/LdoProvider";
+import { fetch } from "solid-authn-react-native";
+import { SolidAuthProvider } from "../lib/SolidAuthProvider";
 
 const App: FunctionComponent = () => {
-  const isLoggedIn = false;
-
   return (
-    <Layout />
+    <SolidAuthProvider>
+      <LdoProvider fetch={fetch}>
+        <Layout />
+      </LdoProvider>
+    </SolidAuthProvider>
   );
-}
+};
 
 export default App;

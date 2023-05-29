@@ -1,12 +1,14 @@
-import { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 
 interface BlurTextInputProps {
   value: string;
   onBlurText: (text: string) => void;
-
 }
 
-const BlurTextInput: FunctionComponent<BlurTextInputProps> = ({ value, onBlurText }) => {
+const BlurTextInput: FunctionComponent<BlurTextInputProps> = ({
+  value,
+  onBlurText,
+}) => {
   const [text, setText] = useState(value);
 
   return (

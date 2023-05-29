@@ -1,19 +1,30 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent, useCallback } from "react";
 import Profile from "./Profile";
+import { useSolidAuth } from "../lib/SolidAuthProvider";
 
 const Layout: FunctionComponent = () => {
-  const isLoggedIn = false;
+  const { login, session } = useSolidAuth();
+
+  const loginCb = useCallback(async () => {
+    const issuer = prompt(
+      "Enter your Pod Provider",
+      "https://solidcommunity.net"
+    );
+    if (issuer) {
+      await login(issuer);
+    }
+  }, []);
 
   return (
     <div>
       <h1>LDO Solid React Test</h1>
-      {isLoggedIn ? (
+      {session.isLoggedIn ? (
         <Profile />
       ) : (
-        <button>Log In</button>
+        <button onClick={loginCb}>Log In</button>
       )}
     </div>
   );
-}
+};
 
 export default Layout;
