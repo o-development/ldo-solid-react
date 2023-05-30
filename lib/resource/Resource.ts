@@ -57,10 +57,18 @@ export class Resource extends EventEmitter {
     const rawTurtle = await response.text();
     try {
       const [strippedHashUri] = this.uri.split("#");
-      const transactionDataset = await serializedToDataset(rawTurtle, {
+      const loadedDataset = await serializedToDataset(rawTurtle, {
         baseIRI: strippedHashUri,
       });
-      console.log(transactionDataset.toString());
+
+      const transactionalDataset =
+        this.resourceManager.dataset.startTransaction();
+      transactionalDataset.addAll(loadedDataset);
+
+      const changes = transactionalDataset.getChanges();
+      // TODO: Update all subscribing Tiple Providers
+
+      transactionalDataset.commit();
       this.emit(STATE_UPDATE);
     } catch (error: unknown) {
       // TODO handle errors better

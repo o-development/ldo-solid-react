@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
-import { useResource } from "../lib";
-// import { useLdo, useResource, useSubject } from "./hooks";
-// import { SolidProfileShapeShapeType } from "./ldo/solidProfile.shapeTypes";
+import { useResource, useSubject } from "../lib";
+import { SolidProfileShapeShapeType } from "./ldo/solidProfile.shapeTypes";
 // import BlurTextInput from "./BlurTextInput";
 
 const Profile: FunctionComponent = () => {
@@ -10,13 +9,19 @@ const Profile: FunctionComponent = () => {
   const [, isLoading, didInitialFetch, error] = useResource(webId, {
     loadOnMount: true,
   });
-  // const [profile, profileError] = useSubject(SolidProfileShapeShapeType, webId);
-  console.log(isLoading, didInitialFetch, error);
+  const [profile, profileError] = useSubject(SolidProfileShapeShapeType, webId);
   return (
     <div>
       <p>isLoading: {isLoading ? "true" : "false"}</p>
       <p>didInitialFetch: {didInitialFetch ? "true" : "false"}</p>
       <p>error: {error?.message || "No Error"}</p>
+      {profileError ? (
+        <p>Profile Error</p>
+      ) : (
+        <div>
+          <p>Name: {profile.name}</p>
+        </div>
+      )}
     </div>
   );
 
