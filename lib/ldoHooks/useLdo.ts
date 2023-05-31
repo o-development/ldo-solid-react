@@ -1,16 +1,18 @@
 import {
   LdoDataset,
   startTransaction,
-  toSparqlUpdate,
   transactionChanges,
   write,
+  getDataset,
 } from "ldo";
 import { LdoBase } from "ldo/dist/util";
 import { useCallback, useMemo } from "react";
 import { useLdoContext } from "../LdoContext";
-import { DatasetChanges } from "o-dataset-pack";
+import { DatasetChanges, TransactionalDataset } from "o-dataset-pack";
 import { Quad } from "@rdfjs/types";
 import { Resource } from "../resource/Resource";
+import { splitChangesByGraph } from "./helpers/splitChangesByGraph";
+import { changesToSparqlUpdate } from "./helpers/changesToSparqlUpdate";
 
 export interface UseLdoReturn {
   changeData<Type extends LdoBase>(input: Type, resource: Resource): Type;
@@ -33,7 +35,7 @@ export function useLdo(): UseLdoReturn {
       // Start a transaction with the input
       startTransaction(transactionLdo);
       // Return
-      return input;
+      return transactionLdo;
     },
     [dataset, fetch]
   );
@@ -44,16 +46,40 @@ export function useLdo(): UseLdoReturn {
    */
   const commitChanges = useCallback(
     async (input: LdoBase) => {
-      updateManager.notifyListenersOfChanges(
-        transactionChanges(input) as DatasetChanges<Quad>
+      const changes = transactionChanges(input) as DatasetChanges<Quad>;
+      const transactionalDataset: TransactionalDataset = getDataset(
+        input
+      ) as TransactionalDataset;
+
+      transactionalDataset.commit();
+      updateManager.notifyListenersOfChanges(changes);
+
+      const changesByGraph = splitChangesByGraph(changes);
+
+      // Make queries
+      await Promise.all(
+        Array.from(changesByGraph.entries()).map(
+          async ([graph, datasetChanges]) => {
+            if (graph.termType === "DefaultGraph") {
+              return;
+            }
+            const sparqlUpdate = await changesToSparqlUpdate(datasetChanges);
+            console.log(sparqlUpdate);
+            const response = await fetch(graph.value, {
+              method: "PATCH",
+              body: sparqlUpdate,
+              headers: {
+                "Content-Type": "application/sparql-update",
+              },
+            });
+            if (response.status !== 200) {
+              // Handle Error by rollback
+              transactionalDataset.rollback();
+              updateManager.notifyListenersOfChanges(changes);
+            }
+          }
+        )
       );
-
-      // Run the Sparql Query
-      // TODO: Split SPARQL query between documents
-      const sparql = toSparqlUpdate(input);
-      const response = await fetch();
-
-      // Rollback?
     },
     [dataset, fetch]
   );

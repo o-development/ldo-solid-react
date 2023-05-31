@@ -4,7 +4,7 @@ import { SolidProfileShapeShapeType } from "./ldo/solidProfile.shapeTypes";
 import BlurTextInput from "./BlurTextInput";
 
 const Profile: FunctionComponent = () => {
-  const { startTransaction, commitTransaction } = useLdo();
+  const { changeData, commitChanges } = useLdo();
   const webId = "https://jackson.solidcommunity.net/profile/card#me";
   const webIdResource = useResource(webId, {
     loadOnMount: true,
@@ -25,9 +25,9 @@ const Profile: FunctionComponent = () => {
             <BlurTextInput
               value={profile.name || ""}
               onBlurText={async (text) => {
-                const tProfile = startTransaction(profile);
-                tProfile.name = text;
-                await commitTransaction(tProfile);
+                const cProfile = changeData(profile, webIdResource);
+                cProfile.name = text;
+                await commitChanges(cProfile);
               }}
             />
           </div>
