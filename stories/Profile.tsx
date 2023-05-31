@@ -1,25 +1,36 @@
 import React, { FunctionComponent } from "react";
-import { useResource, useSubject } from "../lib";
+import { useLdo, useResource, useSubject } from "../lib";
 import { SolidProfileShapeShapeType } from "./ldo/solidProfile.shapeTypes";
-// import BlurTextInput from "./BlurTextInput";
+import BlurTextInput from "./BlurTextInput";
 
 const Profile: FunctionComponent = () => {
-  // const { startTransaction, commitTransaction } = useLdo();
+  const { startTransaction, commitTransaction } = useLdo();
   const webId = "https://jackson.solidcommunity.net/profile/card#me";
-  const [, isLoading, didInitialFetch, error] = useResource(webId, {
+  const webIdResource = useResource(webId, {
     loadOnMount: true,
   });
   const [profile, profileError] = useSubject(SolidProfileShapeShapeType, webId);
   return (
     <div>
-      <p>isLoading: {isLoading ? "true" : "false"}</p>
-      <p>didInitialFetch: {didInitialFetch ? "true" : "false"}</p>
-      <p>error: {error?.message || "No Error"}</p>
+      <p>isLoading: {webIdResource.isLoading ? "true" : "false"}</p>
+      <p>didInitialFetch: {webIdResource.didInitialFetch ? "true" : "false"}</p>
+      <p>error: {webIdResource.error?.message || "No Error"}</p>
       {profileError ? (
         <p>Profile Error</p>
       ) : (
         <div>
-          <p>Name: {profile.name}</p>
+          <h2>Profile</h2>
+          <div>
+            <label>Name:</label>
+            <BlurTextInput
+              value={profile.name || ""}
+              onBlurText={async (text) => {
+                const tProfile = startTransaction(profile);
+                tProfile.name = text;
+                await commitTransaction(tProfile);
+              }}
+            />
+          </div>
         </div>
       )}
     </div>

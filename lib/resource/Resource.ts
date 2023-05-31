@@ -1,4 +1,5 @@
 import { EventEmitter } from "events";
+import { quad as createQuad, namedNode } from "@rdfjs/data-model";
 import { ResourceError } from "./ResourceError";
 import { ResourceManager } from "./ResourceManager";
 import { serializedToDataset } from "o-dataset-pack";
@@ -11,7 +12,7 @@ const STATE_UPDATE = "stateUpdate";
  * called
  */
 export class Resource extends EventEmitter {
-  private readonly uri: string;
+  public readonly uri: string;
   private _isLoading = false;
   private _didInitialFetch = false;
   private _error?: ResourceError;
@@ -19,7 +20,7 @@ export class Resource extends EventEmitter {
 
   constructor(uri: string, resourceManager: ResourceManager) {
     super();
-    this.uri = uri;
+    this.uri = ResourceManager.normalizeUri(uri);
     this.resourceManager = resourceManager;
   }
 
@@ -56,17 +57,25 @@ export class Resource extends EventEmitter {
 
     const rawTurtle = await response.text();
     try {
-      const [strippedHashUri] = this.uri.split("#");
       const loadedDataset = await serializedToDataset(rawTurtle, {
-        baseIRI: strippedHashUri,
+        baseIRI: this.uri,
       });
 
       const transactionalDataset =
         this.resourceManager.dataset.startTransaction();
-      transactionalDataset.addAll(loadedDataset);
+      loadedDataset.forEach((quad) => {
+        transactionalDataset.add(
+          createQuad(
+            quad.subject,
+            quad.predicate,
+            quad.object,
+            namedNode(this.uri)
+          )
+        );
+      });
 
       const changes = transactionalDataset.getChanges();
-      // TODO: Update all subscribing Tiple Providers
+      this.resourceManager.updateManager.notifyListenersOfChanges(changes);
 
       transactionalDataset.commit();
       this.emit(STATE_UPDATE);

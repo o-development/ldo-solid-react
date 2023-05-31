@@ -2,7 +2,7 @@ import { ShapeType } from "ldo";
 import { LdoBase } from "ldo/dist/util";
 import { SubjectType } from "jsonld-dataset-proxy";
 import { useLdoContext } from "../LdoContext";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 export function useSubject<Type extends LdoBase>(
   shapeType: ShapeType<Type>,
@@ -13,5 +13,9 @@ export function useSubject<Type extends LdoBase>(
     () => dataset.usingType(shapeType).fromSubject(subject),
     [shapeType, subject]
   );
+  useEffect(() => {
+    // Force update when data has been updated
+  }, [shapeType, subject]);
+
   return [linkedDataObject, undefined];
 }

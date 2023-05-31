@@ -5,13 +5,19 @@ import { FunctionComponent, PropsWithChildren, useMemo } from "react";
 import crossFetch from "cross-fetch";
 import { LdoContextProvider } from "./LdoContext";
 import { ResourceManager } from "./resource/ResourceManager";
+import { UpdateManager } from "./ldoHooks/UpdateManager";
 
 export interface LdoProviderProps extends PropsWithChildren {
   fetch?: typeof fetch;
   dataset?: Dataset;
 }
 
-const resourceManager = new ResourceManager();
+const updateManager = new UpdateManager();
+const resourceManager = new ResourceManager(
+  undefined,
+  undefined,
+  updateManager
+);
 
 /**
  * Main Ldo Provider
@@ -31,7 +37,12 @@ const LdoProvider: FunctionComponent<LdoProviderProps> = ({
 
   return (
     <LdoContextProvider
-      value={{ dataset: ldoDataset, fetch: finalFetch, resourceManager }}
+      value={{
+        dataset: ldoDataset,
+        fetch: finalFetch,
+        resourceManager,
+        updateManager,
+      }}
     >
       {children}
     </LdoContextProvider>

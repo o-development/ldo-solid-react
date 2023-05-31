@@ -5,3 +5,4 @@ export * from "./resource/useResource";
 
 // LdoHooks
 export * from "./ldoHooks/useSubject";
+export * from "./ldoHooks/useLdo";
