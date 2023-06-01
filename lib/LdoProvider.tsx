@@ -5,7 +5,7 @@ import { FunctionComponent, PropsWithChildren, useMemo } from "react";
 import crossFetch from "cross-fetch";
 import { LdoContextProvider } from "./LdoContext";
 import { ResourceManager } from "./resource/ResourceManager";
-import { UpdateManager } from "./ldoHooks/UpdateManager";
+import { UpdateManager } from "./ldoHooks/helpers/UpdateManager";
 
 export interface LdoProviderProps extends PropsWithChildren {
   fetch?: typeof fetch;

@@ -64,7 +64,6 @@ export function useLdo(): UseLdoReturn {
               return;
             }
             const sparqlUpdate = await changesToSparqlUpdate(datasetChanges);
-            console.log(sparqlUpdate);
             const response = await fetch(graph.value, {
               method: "PATCH",
               body: sparqlUpdate,

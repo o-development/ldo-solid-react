@@ -1,4 +1,4 @@
-import { UpdateManager } from "../ldoHooks/UpdateManager";
+import { UpdateManager } from "../ldoHooks/helpers/UpdateManager";
 import { Resource } from "./Resource";
 import { LdoDataset, createLdoDataset } from "ldo";
 

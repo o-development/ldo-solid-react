@@ -2,7 +2,7 @@ import { LdoDataset, createLdoDataset } from "ldo";
 import { createContext, useContext } from "react";
 import crossFetch from "cross-fetch";
 import { ResourceManager } from "./resource/ResourceManager";
-import { UpdateManager } from "./ldoHooks/UpdateManager";
+import { UpdateManager } from "./ldoHooks/helpers/UpdateManager";
 
 const LdoContext = createContext<{
   dataset: LdoDataset;

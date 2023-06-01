@@ -20,10 +20,7 @@ export class UpdateManager {
     )}${nodeToString(tripleMatch[2])}`;
   }
 
-  registerTripleMatchListenerOnce(
-    tripleMatch: TripleMatch,
-    callback: () => void
-  ): void {
+  registerListener(tripleMatch: TripleMatch, callback: () => void): void {
     const hash = this.tripleMatchToHash(tripleMatch);
     if (!this.tripleMatchListenerMap[hash]) {
       this.tripleMatchListenerMap[hash] = new Set();
