@@ -1,0 +1,36 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<human>
+
+<human> EXTRA wdt:instanceOf {
+  wdt:instanceOf [wd:Human];
+  wdt:sexOrGender [wd:male wd:female wd:intersex wd:transgenderFemale wd:transgenerMale wd:nonBinary]?;   # gender
+  wdt:placeOfBirth xsd:string ?;                     # place of birth
+  wdt:dateOfBirth xsd:string ? ;                 # date of birth
+  wdt:givenName xsd:string * ;                 # given name
+  wdt:familyName xsd:string * ;                 # family name
+  wdt:occupation xsd:string * ;                 # occupation
+  wdt:countryOfCitizenship @<country> *;  # country of citizenship
+  wdt:father @<human> *;           # father
+  wdt:mother @<human> *;           # mother
+  wdt:sibling @<human> *;         # sibling
+  wdt:spouse @<human> *;           # spouse
+  wdt:child @<human> *;           # children
+  wdt:relative @<human> *;         # relatives
+  wdt:nativeLanguage @<language> *;
+  wdt:languagesSpoken @<language> *;
+  wdt:writingLanguage  @<language> *;
+  rdfs:label rdf:langString+;
+}
+
+<country> EXTRA wdt:instanceOf {
+  wdt:instanceOf [wd:country wd:historicalCountry wd:sovereignState] +;
+}
+
+<language> EXTRA wdt:instanceOf {
+  wdt:instanceOf [wd:language wd:modernLanguage] +;
+}

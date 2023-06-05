@@ -1,7 +1,9 @@
 import React, { FunctionComponent } from "react";
-import { useLdo, useResource, useSubject } from "../lib";
-import { SolidProfileShapeShapeType } from "./ldo/solidProfile.shapeTypes";
-import BlurTextInput from "./BlurTextInput";
+import { useLdo, useResource, useSubject } from "../../lib";
+import { SolidProfileShapeShapeType } from "../ldo/solidProfile.shapeTypes";
+import BlurTextInput from "../sharedComponents/BlurTextInput";
+import Friend from "./Friend";
+import { SolidProfileShape } from "../ldo/solidProfile.typings";
 
 const Profile: FunctionComponent = () => {
   const { changeData, commitChanges } = useLdo();
@@ -30,6 +32,36 @@ const Profile: FunctionComponent = () => {
                 await commitChanges(cProfile);
               }}
             />
+          </div>
+          <div>
+            <h3>Friends</h3>
+            {profile.knows?.map((friend, index) => {
+              return (
+                <Friend
+                  key={friend["@id"]}
+                  uri={friend["@id"] as string}
+                  onRemove={async () => {
+                    const cProfile = changeData(profile, webIdResource);
+                    cProfile.knows?.splice(index, 1);
+                    await commitChanges(cProfile);
+                  }}
+                />
+              );
+            })}
+            <button
+              onClick={async () => {
+                const friendWebId = prompt("Enter the Friend's WebId");
+                if (friendWebId != null) {
+                  const cProfile = changeData(profile, webIdResource);
+                  cProfile.knows?.push({
+                    "@id": friendWebId,
+                  } as SolidProfileShape);
+                  await commitChanges(cProfile);
+                }
+              }}
+            >
+              Add Friend
+            </button>
           </div>
         </div>
       )}

@@ -1,8 +1,11 @@
-import React, { FunctionComponent, useCallback } from "react";
-import Profile from "./Profile";
-import { useSolidAuth } from "../lib/SolidAuthProvider";
+import React, {
+  FunctionComponent,
+  PropsWithChildren,
+  useCallback,
+} from "react";
+import { useSolidAuth } from "../../lib/SolidAuthProvider";
 
-const Layout: FunctionComponent = () => {
+const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   const { login, session } = useSolidAuth();
 
   const loginCb = useCallback(async () => {
@@ -19,7 +22,7 @@ const Layout: FunctionComponent = () => {
     <div>
       <h1>LDO Solid React Test</h1>
       {session.isLoggedIn ? (
-        <Profile />
+        children
       ) : (
         <button onClick={loginCb}>Log In</button>
       )}
