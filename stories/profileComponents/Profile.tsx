@@ -4,10 +4,12 @@ import { SolidProfileShapeShapeType } from "../ldo/solidProfile.shapeTypes";
 import BlurTextInput from "../sharedComponents/BlurTextInput";
 import Friend from "./Friend";
 import { SolidProfileShape } from "../ldo/solidProfile.typings";
+import { useSolidAuth } from "../../lib/SolidAuthProvider";
 
 const Profile: FunctionComponent = () => {
-  const { changeData, commitChanges } = useLdo();
-  const webId = "https://jackson.solidcommunity.net/profile/card#me";
+  const { changeData, commitData } = useLdo();
+  const { session } = useSolidAuth();
+  const webId = session.webId || "https://jackson.solidweb.org/profile/card#me";
   const webIdResource = useResource(webId, {
     loadOnMount: true,
   });
@@ -29,7 +31,7 @@ const Profile: FunctionComponent = () => {
               onBlurText={async (text) => {
                 const cProfile = changeData(profile, webIdResource);
                 cProfile.name = text;
-                await commitChanges(cProfile);
+                await commitData(cProfile);
               }}
             />
           </div>
@@ -43,7 +45,7 @@ const Profile: FunctionComponent = () => {
                   onRemove={async () => {
                     const cProfile = changeData(profile, webIdResource);
                     cProfile.knows?.splice(index, 1);
-                    await commitChanges(cProfile);
+                    await commitData(cProfile);
                   }}
                 />
               );
@@ -56,7 +58,7 @@ const Profile: FunctionComponent = () => {
                   cProfile.knows?.push({
                     "@id": friendWebId,
                   } as SolidProfileShape);
-                  await commitChanges(cProfile);
+                  await commitData(cProfile);
                 }
               }}
             >

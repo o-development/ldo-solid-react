@@ -26,7 +26,7 @@ export function splitChangesByGraph(
       changesMap[graphHash].added = createDataset();
     }
     changesMap[graphHash].added?.add(
-      createQuad(quad.subject, quad.predicate, quad.object)
+      createQuad(quad.subject, quad.predicate, quad.object, quad.graph)
     );
   });
 
@@ -39,7 +39,7 @@ export function splitChangesByGraph(
       changesMap[graphHash].removed = createDataset();
     }
     changesMap[graphHash].removed?.add(
-      createQuad(quad.subject, quad.predicate, quad.object)
+      createQuad(quad.subject, quad.predicate, quad.object, quad.graph)
     );
   });
 

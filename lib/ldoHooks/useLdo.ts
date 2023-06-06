@@ -3,17 +3,15 @@ import {
   startTransaction,
   transactionChanges,
   write,
-  getDataset,
   ShapeType,
 } from "ldo";
 import { LdoBase } from "ldo/dist/util";
 import { useCallback, useMemo } from "react";
 import { useLdoContext } from "../LdoContext";
-import { DatasetChanges, TransactionalDataset } from "o-dataset-pack";
+import { DatasetChanges } from "o-dataset-pack";
 import { Quad } from "@rdfjs/types";
 import { Resource } from "../resource/Resource";
-import { splitChangesByGraph } from "./helpers/splitChangesByGraph";
-import { changesToSparqlUpdate } from "./helpers/changesToSparqlUpdate";
+import { splitChangesByGraph } from "../util/splitChangesByGraph";
 import { SubjectType } from "jsonld-dataset-proxy";
 
 export interface UseLdoReturn {
@@ -29,7 +27,7 @@ export interface UseLdoReturn {
 }
 
 export function useLdo(): UseLdoReturn {
-  const { dataset, fetch, updateManager, resourceManager } = useLdoContext();
+  const { dataset, fetch, resourceManager } = useLdoContext();
 
   /**
    * Begins tracking changes to eventually commit
@@ -74,13 +72,6 @@ export function useLdo(): UseLdoReturn {
   const commitData = useCallback(
     async (input: LdoBase) => {
       const changes = transactionChanges(input) as DatasetChanges<Quad>;
-      const transactionalDataset: TransactionalDataset = getDataset(
-        input
-      ) as TransactionalDataset;
-
-      transactionalDataset.commit();
-      updateManager.notifyListenersOfChanges(changes);
-
       const changesByGraph = splitChangesByGraph(changes);
 
       // Make queries
@@ -90,19 +81,8 @@ export function useLdo(): UseLdoReturn {
             if (graph.termType === "DefaultGraph") {
               return;
             }
-            const sparqlUpdate = await changesToSparqlUpdate(datasetChanges);
-            const response = await fetch(graph.value, {
-              method: "PATCH",
-              body: sparqlUpdate,
-              headers: {
-                "Content-Type": "application/sparql-update",
-              },
-            });
-            if (response.status !== 200) {
-              // Handle Error by rollback
-              transactionalDataset.rollback();
-              updateManager.notifyListenersOfChanges(changes);
-            }
+            const resource = resourceManager.getResource(graph.value);
+            await resource.update(datasetChanges);
           }
         )
       );

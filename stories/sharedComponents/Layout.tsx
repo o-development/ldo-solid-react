@@ -6,7 +6,7 @@ import React, {
 import { useSolidAuth } from "../../lib/SolidAuthProvider";
 
 const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  const { login, session } = useSolidAuth();
+  const { login, session, logout } = useSolidAuth();
 
   const loginCb = useCallback(async () => {
     const issuer = prompt(
@@ -22,7 +22,14 @@ const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => {
     <div>
       <h1>LDO Solid React Test</h1>
       {session.isLoggedIn ? (
-        children
+        <div>
+          <p>
+            Logged in as {session.webId}{" "}
+            <button onClick={logout}>Log Out</button>
+          </p>
+          <hr />
+          {children}
+        </div>
       ) : (
         <button onClick={loginCb}>Log In</button>
       )}
