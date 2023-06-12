@@ -1,22 +1,21 @@
-import { LdoDataset, createLdoDataset } from "ldo";
+import { LdoDataset } from "ldo";
 import { createContext, useContext } from "react";
-import crossFetch from "cross-fetch";
-import { ResourceManager } from "./resource/ResourceManager";
 import { UpdateManager } from "./ldoHooks/helpers/UpdateManager";
+import { DocumentManager } from "./document/DocumentManager";
+import { DocumentError } from "./document/errors/DocumentError";
 
 export interface LdoContextData {
   dataset: LdoDataset;
   fetch: typeof fetch;
-  resourceManager: ResourceManager;
+  documentManager: DocumentManager;
   updateManager: UpdateManager;
+  onDocumentError?: (documentError: DocumentError) => void;
 }
 
-const LdoContext = createContext<LdoContextData>({
-  dataset: createLdoDataset(),
-  fetch: crossFetch,
-  resourceManager: new ResourceManager(),
-  updateManager: new UpdateManager(),
-});
+// No default parameter is required as it will be set in the provider
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const LdoContext = createContext<LdoContextData>({});
 
 export const LdoContextProvider = LdoContext.Provider;
 export const useLdoContext = () => useContext(LdoContext);

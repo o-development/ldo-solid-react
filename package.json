@@ -13,7 +13,8 @@
     "prepublishOnly": "npm run test && npm run build && npm run docs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:ldo": "ldo build --input stories/shapes --output stories/ldo"
+    "storybook:ldo": "ldo build --input stories/shapes --output stories/ldo",
+    "build:ldo": "ldo build --input lib/shapes --output lib/ldo"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.44.3",
     "solid-authn-react-native": "^2.0.2",
     "storybook": "^7.0.18",
     "ts-jest": "^29.0.2",
@@ -62,6 +64,7 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
+    "@inrupt/solid-client": "^1.29.0",
     "cross-fetch": "^3.1.6",
     "jsonld-dataset-proxy": "^1.2.3",
     "ldo": "^1.0.3",

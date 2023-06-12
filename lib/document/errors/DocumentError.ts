@@ -1,4 +1,4 @@
-export class ResourceError extends Error {
+export class DocumentError extends Error {
   public readonly status: number;
 
   constructor(status: number, message?: string) {

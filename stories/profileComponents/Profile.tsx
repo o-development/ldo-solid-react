@@ -19,6 +19,7 @@ const Profile: FunctionComponent = () => {
       <p>isLoading: {webIdResource.isLoading ? "true" : "false"}</p>
       <p>didInitialFetch: {webIdResource.didInitialFetch ? "true" : "false"}</p>
       <p>error: {webIdResource.error?.message || "No Error"}</p>
+      <hr />
       {profileError ? (
         <p>Profile Error</p>
       ) : (

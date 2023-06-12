@@ -47,6 +47,12 @@ export class TrackingProxyContext extends ProxyContext {
       return oldGetFunction && oldGetFunction(target, key, receiver);
     };
     baseHandler.get = newGetFunction;
+    baseHandler.set = () => {
+      console.warn(
+        "You've attempted to set a value on a Linked Data Object from the useSubject, useMatchingSubject, or useMatchingObject hooks. These linked data objects should only be used to render data, not modify it. To modify data, use the `changeData` function."
+      );
+      return true;
+    };
     return baseHandler;
   }
 

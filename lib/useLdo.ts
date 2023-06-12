@@ -6,13 +6,17 @@ import {
   ShapeType,
 } from "ldo";
 import { LdoBase } from "ldo/dist/util";
-import { useCallback, useMemo } from "react";
-import { useLdoContext } from "../LdoContext";
+import { useCallback, useContext, useMemo } from "react";
 import { DatasetChanges } from "o-dataset-pack";
 import { Quad } from "@rdfjs/types";
-import { Resource } from "../resource/Resource";
-import { splitChangesByGraph } from "../util/splitChangesByGraph";
+import { Resource } from "./resource/Resource";
+import { splitChangesByGraph } from "./util/splitChangesByGraph";
 import { SubjectType } from "jsonld-dataset-proxy";
+import { DataResource } from "./document/resource/dataResource/DataResource";
+import { BinaryResource } from "./document/binaryResource/BinaryResource";
+import { ContainerResource } from "./document/containerResource/ContainerResource";
+import { AccessRules } from "./document/accessRules/AccessRules";
+import { useLdoContext } from "./LdoContext";
 
 export interface UseLdoReturn {
   changeData<Type extends LdoBase>(input: Type, ...resources: Resource[]): Type;
@@ -24,10 +28,14 @@ export interface UseLdoReturn {
   ): Type;
   dataset: LdoDataset;
   getResource: (uri: string) => Resource;
+  getDataResource: (uri: string) => DataResource;
+  getBinaryResource: (uri: string) => BinaryResource;
+  getContainerResource: (uri: string) => ContainerResource;
+  getAccessRules: (resource: string | Resource) => AccessRules;
 }
 
 export function useLdo(): UseLdoReturn {
-  const { dataset, fetch, resourceManager } = useLdoContext();
+  const { documentManager, dataset } = useLdoContext();
 
   /**
    * Begins tracking changes to eventually commit
@@ -81,7 +89,7 @@ export function useLdo(): UseLdoReturn {
             if (graph.termType === "DefaultGraph") {
               return;
             }
-            const resource = resourceManager.getResource(graph.value);
+            const resource = documentManager.getDataResource(graph.value);
             await resource.update(datasetChanges);
           }
         )
@@ -92,9 +100,9 @@ export function useLdo(): UseLdoReturn {
 
   const getResource = useCallback(
     (uri: string) => {
-      return resourceManager.getResource(uri);
+      return documentManager.getResource(uri);
     },
-    [resourceManager]
+    [documentManager]
   );
 
   // Returns the values
@@ -104,7 +112,11 @@ export function useLdo(): UseLdoReturn {
       changeData,
       createData,
       commitData,
-      getResource,
+      getResource: (uri) => documentManager.getResource(uri),
+      getDataResource: (uri) => documentManager.getDataResource(uri),
+      getBinaryResource: (uri) => documentManager.getBinaryResource(uri),
+      getContainerResource: (uri) => documentManager.getContainerResource(uri),
+      getAccessRules: (resource) => documentManager.getAccessRules(resource);
     }),
     [dataset, changeData, commitData, getResource]
   );

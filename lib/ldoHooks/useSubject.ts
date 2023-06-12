@@ -6,10 +6,9 @@ import {
   SubjectType,
 } from "jsonld-dataset-proxy";
 import { useLdoContext } from "../LdoContext";
-import { useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { TrackingProxyContext } from "./helpers/TrackingProxyContext";
 import { defaultGraph } from "@rdfjs/data-model";
-import { useForceUpdate } from "../util/useForceReload";
 
 export function useSubject<Type extends LdoBase>(
   shapeType: ShapeType<Type>,
@@ -17,7 +16,11 @@ export function useSubject<Type extends LdoBase>(
 ): [Type, undefined] | [undefined, Error] {
   const { dataset, updateManager } = useLdoContext();
 
-  const forceUpdate = useForceUpdate();
+  const [forceUpdateCounter, setForceUpdateCounter] = useState(0);
+  const forceUpdate = useCallback(
+    () => setForceUpdateCounter((val) => val + 1),
+    [setForceUpdateCounter]
+  );
 
   // The main linked data object
   const linkedDataObject = useMemo(() => {
@@ -38,7 +41,14 @@ export function useSubject<Type extends LdoBase>(
       shapeType
     );
     return builder.fromSubject(subject);
-  }, [shapeType, subject, dataset, updateManager, forceUpdate]);
+  }, [
+    shapeType,
+    subject,
+    dataset,
+    updateManager,
+    forceUpdateCounter,
+    forceUpdate,
+  ]);
 
   useEffect(() => {
     // Unregister force update listener upon unmount

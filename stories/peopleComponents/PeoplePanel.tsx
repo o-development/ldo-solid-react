@@ -1,16 +1,13 @@
-import React, { FunctionComponent, useCallback } from "react";
-import { useLdo, useResource, useSubject } from "../../lib";
-import { ContainerShapeType } from "../ldo/solid.shapeTypes";
+import React, { FunctionComponent, useCallback, useState } from "react";
+import { useLdo, useResource } from "../../lib";
 import { humanShapeType } from "../ldo/human.shapeTypes";
+import Person from "./Person";
 
 const PeoplePanel: FunctionComponent = () => {
-  const resourceUri = "https://jackson.solidcommunity.net/public/testPeople/";
+  const resourceUri = "https://jackson.solidweb.org/public/testPeople/";
   const { getResource, createData, commitData } = useLdo();
   const containerResource = useResource(resourceUri, { loadOnMount: true });
-  const [container, containerError] = useSubject(
-    ContainerShapeType,
-    resourceUri
-  );
+  const [curPersonId, setCurPersonId] = useState<string | undefined>();
 
   const addPerson = useCallback(async () => {
     const personName = prompt("What is the name for the file?");
@@ -25,9 +22,6 @@ const PeoplePanel: FunctionComponent = () => {
   if (containerResource.isLoading) {
     return <p>Loading...</p>;
   }
-  if (containerError) {
-    return <p>Container Error</p>;
-  }
 
   return (
     <div>
@@ -36,14 +30,19 @@ const PeoplePanel: FunctionComponent = () => {
           <h2>List of People</h2>
           <button onClick={addPerson}>Add a person</button>
           <ul>
-            {container.contains?.map((contained) => (
-              <li key={contained["@id"]}>{contained["@id"]}</li>
+            {containerResource.contains?.map((contained) => (
+              <li
+                key={contained["@id"]}
+                onClick={() => setCurPersonId(contained["@id"])}
+              >
+                {contained["@id"]}
+              </li>
             ))}
           </ul>
         </div>
 
         <div style={{ padding: 10, flex: 2 }}>
-          <h2>Person</h2>
+          {curPersonId && <Person uri={curPersonId} />}
         </div>
       </div>
     </div>
