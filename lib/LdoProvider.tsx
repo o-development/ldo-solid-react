@@ -23,12 +23,9 @@ export interface LdoProviderProps extends PropsWithChildren {
 /**
  * Main Ldo Provider
  */
-const LdoProvider: FunctionComponent<PropsWithChildren<LdoProviderProps>> = ({
-  dataset,
-  fetch,
-  onDocumentError,
-  children,
-}) => {
+export const LdoProvider: FunctionComponent<
+  PropsWithChildren<LdoProviderProps>
+> = ({ dataset, fetch, onDocumentError, children }) => {
   const finalFetch = useMemo(() => fetch || crossFetch, [fetch]);
   const ldoDataset = useMemo(() => createLdoDataset(dataset), [dataset]);
 
@@ -67,4 +64,3 @@ const LdoProvider: FunctionComponent<PropsWithChildren<LdoProviderProps>> = ({
     </LdoContextProvider>
   );
 };
-exports.default = LdoProvider;
