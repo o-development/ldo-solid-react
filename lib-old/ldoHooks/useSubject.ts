@@ -1,10 +1,10 @@
+import { LdoBuilder, ShapeType } from "ldo";
+import { LdoBase } from "ldo/dist/util";
 import {
   ContextUtil,
   JsonldDatasetProxyBuilder,
   SubjectType,
 } from "jsonld-dataset-proxy";
-import { LdoBuilder, ShapeType } from "ldo";
-import { LdoBase } from "ldo/dist/util";
 import { useLdoContext } from "../LdoContext";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { TrackingProxyContext } from "./helpers/TrackingProxyContext";

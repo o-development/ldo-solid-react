@@ -22,13 +22,10 @@ export const solidSchema: Schema = {
               predicate: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
               valueExpr: {
                 type: "NodeConstraint",
-                values: [
-                  "http://www.w3.org/ns/ldp#Container",
-                  "http://www.w3.org/ns/ldp#Resource",
-                ],
+                values: ["http://www.w3.org/ns/ldp#Container"],
               },
               min: 0,
-              max: -1,
+              max: 1,
               annotations: [
                 {
                   type: "Annotation",
@@ -131,13 +128,10 @@ export const solidSchema: Schema = {
               predicate: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
               valueExpr: {
                 type: "NodeConstraint",
-                values: [
-                  "http://www.w3.org/ns/ldp#Resource",
-                  "http://www.w3.org/ns/iana/media-types/text/turtle#Resource",
-                ],
+                values: ["http://www.w3.org/ns/ldp#Resource"],
               },
               min: 0,
-              max: -1,
+              max: 1,
               annotations: [
                 {
                   type: "Annotation",

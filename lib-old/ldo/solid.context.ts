@@ -11,7 +11,6 @@ export const solidContext: ContextDefinition = {
     "@container": "@set",
   },
   Container: "http://www.w3.org/ns/ldp#Container",
-  Resource: "http://www.w3.org/ns/ldp#Resource",
   modified: {
     "@id": "http://purl.org/dc/terms/modified",
     "@type": "http://www.w3.org/2001/XMLSchema#string",
@@ -22,7 +21,7 @@ export const solidContext: ContextDefinition = {
     "@type": "@id",
     "@container": "@set",
   },
-  Resource2: "http://www.w3.org/ns/iana/media-types/text/turtle#Resource",
+  Resource: "http://www.w3.org/ns/ldp#Resource",
   mtime: {
     "@id": "http://www.w3.org/ns/posix/stat#mtime",
     "@type": "http://www.w3.org/2001/XMLSchema#decimal",

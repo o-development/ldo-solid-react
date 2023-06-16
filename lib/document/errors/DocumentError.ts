@@ -1,8 +1,10 @@
-export class DocumentError extends Error {
-  public readonly status: number;
+import { FetchableDocument } from "../FetchableDocument";
 
-  constructor(status: number, message?: string) {
+export class DocumentError extends Error {
+  public readonly document: FetchableDocument;
+
+  constructor(document: FetchableDocument, message: string) {
     super(message);
-    this.status = status;
+    this.document = document;
   }
 }

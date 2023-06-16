@@ -1,8 +1,10 @@
 import { DocumentError } from "../../errors/DocumentError";
-import { Resource } from "../../resource/Resource";
+import { Resource, ResourceDependencies } from "../Resource";
+
+export declare type BinaryResourceDependencies = ResourceDependencies;
 
 export class BinaryResource extends Resource {
-  protected fetchDocument(): Promise<DocumentError | undefined> {
+  fetchDocument(): Promise<DocumentError | undefined> {
     throw new Error("Method not implemented.");
   }
 }

@@ -1,12 +1,18 @@
-import React, { useEffect } from "react";
-import { Dataset } from "@rdfjs/types";
-import { createLdoDataset } from "ldo";
-import { FunctionComponent, PropsWithChildren, useMemo } from "react";
+import React, {
+  FunctionComponent,
+  PropsWithChildren,
+  useEffect,
+  useMemo,
+} from "react";
 import crossFetch from "cross-fetch";
+import { createLdoDataset } from "ldo";
 import { LdoContextData, LdoContextProvider } from "./LdoContext";
 import { UpdateManager } from "./ldoHooks/helpers/UpdateManager";
-import { DocumentManager } from "./document/DocumentManager";
-import { DocumentError } from "./document/DocumentError";
+import { BinaryResourceStore } from "./document/resource/binaryResource/BinaryResourceStore";
+import { DataResourceStore } from "./document/resource/dataResource/DataResourceStore";
+import { ContainerResourceStore } from "./document/resource/dataResource/containerResource/ContainerResourceStore";
+import { AccessRulesStore } from "./document/accessRules/AccessRulesStore";
+import { Dataset } from "@rdfjs/types";
 
 export interface LdoProviderProps extends PropsWithChildren {
   fetch?: typeof fetch;
@@ -17,7 +23,7 @@ export interface LdoProviderProps extends PropsWithChildren {
 /**
  * Main Ldo Provider
  */
-const LdoProvider: FunctionComponent<LdoProviderProps> = ({
+const LdoProvider: FunctionComponent<PropsWithChildren<LdoProviderProps>> = ({
   dataset,
   fetch,
   onDocumentError,
@@ -25,32 +31,40 @@ const LdoProvider: FunctionComponent<LdoProviderProps> = ({
 }) => {
   const finalFetch = useMemo(() => fetch || crossFetch, [fetch]);
   const ldoDataset = useMemo(() => createLdoDataset(dataset), [dataset]);
-  const updateManager = useMemo(() => new UpdateManager(), []);
-  const documentManager = useMemo(
-    () => new DocumentManager(finalFetch, updateManager, ldoDataset),
-    []
-  );
-  // Update the resource manager in case fetch or ldo dataset changes
-  useEffect(() => {
-    documentManager.authFetch = finalFetch;
-    documentManager.dataset = ldoDataset;
-    documentManager.onDocumentError = onDocumentError;
-  }, [finalFetch, ldoDataset, onDocumentError]);
 
-  const providerValue = useMemo(
-    () => ({
+  // Initialize storeDependencies before render
+  const storeDependencies = useMemo(() => {
+    // Ingnoring this because we're setting up circular dependencies
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const dependencies: LdoContextData = {
+      onDocumentError,
       fetch: finalFetch,
       dataset: ldoDataset,
-      updateManager,
-      documentManager,
-      onDocumentError,
-    }),
-    [finalFetch, ldoDataset]
-  );
+      updateManager: new UpdateManager(),
+    };
+    const binaryResourceStore = new BinaryResourceStore(dependencies);
+    const dataResourceStore = new DataResourceStore(dependencies);
+    const containerResourceStore = new ContainerResourceStore(dependencies);
+    const accessRulesStore = new AccessRulesStore(dependencies);
+    dependencies.binaryResourceStore = binaryResourceStore;
+    dependencies.dataResourceStore = dataResourceStore;
+    dependencies.containerResourceStore = containerResourceStore;
+    dependencies.accessRulesStore = accessRulesStore;
+    return dependencies;
+  }, []);
+
+  // Update the resource manager in case fetch or ldo dataset changes
+  useEffect(() => {
+    storeDependencies.fetch = finalFetch;
+    storeDependencies.dataset = ldoDataset;
+    storeDependencies.onDocumentError = onDocumentError;
+  }, [finalFetch, ldoDataset, onDocumentError]);
 
   return (
-    <LdoContextProvider value={providerValue}>{children}</LdoContextProvider>
+    <LdoContextProvider value={storeDependencies}>
+      {children}
+    </LdoContextProvider>
   );
 };
-
-export default LdoProvider;
+exports.default = LdoProvider;

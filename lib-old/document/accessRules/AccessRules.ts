@@ -1,30 +1,22 @@
+import { Document } from "../Document";
+import { DocumentError } from "../errors/DocumentError";
+import { DocumentManager } from "../DocumentManager";
+import { Resource } from "../resource/Resource";
+
 import {
   universalAccess,
   AccessModes as IAccessModes,
 } from "@inrupt/solid-client";
-import {
-  FetchableDocument,
-  FetchableDocumentDependencies,
-} from "../FetchableDocument";
-import { Resource } from "../resource/Resource";
 
 export type AccessModes = IAccessModes;
 
-export interface AccessRulesDependencies extends FetchableDocumentDependencies {
-  fetch: typeof fetch;
-}
+export class AccessRules extends Document {
+  public readonly resource: Resource;
+  private _publicAccess: AccessModes | null = null;
+  private _agentAccess: Record<string, AccessModes> | null = null;
 
-export class AccessRules extends FetchableDocument {
-  readonly resource: Resource;
-  private _publicAccess: IAccessModes | null;
-  private _agentAccess: Record<string, IAccessModes> | null;
-  private dependencies0;
-
-  constructor(resource: Resource, dependencies: AccessRulesDependencies) {
-    super(dependencies);
-    this._publicAccess = null;
-    this._agentAccess = null;
-    this.dependencies0 = dependencies;
+  constructor(resource: Resource, documentManager: DocumentManager) {
+    super(documentManager);
     this.resource = resource;
   }
 
@@ -41,24 +33,21 @@ export class AccessRules extends FetchableDocument {
     return this._agentAccess;
   }
 
-  protected get fetch() {
-    return this.dependencies0.fetch;
-  }
-
   /**
    * ===========================================================================
    * Methods
    * ===========================================================================
    */
-  protected async fetchDocument() {
+  protected async fetchDocument(): Promise<DocumentError | undefined> {
     const [publicAccess, agentAccess] = await Promise.all([
       universalAccess.getPublicAccess(this.resource.uri, {
-        fetch: this.fetch,
+        fetch: this.documentManager.authFetch,
       }),
       universalAccess.getAgentAccessAll(this.resource.uri, {
-        fetch: this.fetch,
+        fetch: this.documentManager.authFetch,
       }),
     ]);
+
     this._publicAccess = publicAccess || {
       read: false,
       write: false,
@@ -69,4 +58,6 @@ export class AccessRules extends FetchableDocument {
     this._agentAccess = agentAccess || {};
     return undefined;
   }
+
+  // TODO Document update
 }

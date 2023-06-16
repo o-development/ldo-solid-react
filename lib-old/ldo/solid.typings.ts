@@ -15,14 +15,9 @@ export interface Container {
   /**
    * A container on a Solid server
    */
-  type?: (
-    | {
-        "@id": "Container";
-      }
-    | {
-        "@id": "Resource";
-      }
-  )[];
+  type?: {
+    "@id": "Container";
+  };
   /**
    * Date modified
    */
@@ -30,7 +25,7 @@ export interface Container {
   /**
    * Defines a Solid Resource
    */
-  contains?: (Resource | Container)[];
+  contains?: Resource[];
   /**
    * ?
    */
@@ -50,14 +45,9 @@ export interface Resource {
   /**
    * Any resource on a Solid server
    */
-  type?: (
-    | {
-        "@id": "Resource";
-      }
-    | {
-        "@id": "Resource2";
-      }
-  )[];
+  type?: {
+    "@id": "Resource";
+  };
   /**
    * Date modified
    */
