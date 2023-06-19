@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { useLdo, useResource, useSubject } from "../../lib";
+import { useLdo, useDataResource, useSubject } from "../../lib";
 import { SolidProfileShapeShapeType } from "../ldo/solidProfile.shapeTypes";
 import BlurTextInput from "../sharedComponents/BlurTextInput";
 import Friend from "./Friend";
@@ -10,9 +10,7 @@ const Profile: FunctionComponent = () => {
   const { changeData, commitData } = useLdo();
   const { session } = useSolidAuth();
   const webId = session.webId || "https://jackson.solidweb.org/profile/card#me";
-  const webIdResource = useResource(webId, {
-    loadOnMount: true,
-  });
+  const webIdResource = useDataResource(webId);
   const [profile, profileError] = useSubject(SolidProfileShapeShapeType, webId);
   return (
     <div>
