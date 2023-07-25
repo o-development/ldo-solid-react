@@ -7,6 +7,7 @@ import {
   FetchableDocumentDependencies,
 } from "../FetchableDocument";
 import { Resource } from "../resource/Resource";
+import { DocumentError } from "../errors/DocumentError";
 
 export type AccessModes = IAccessModes;
 
@@ -51,22 +52,29 @@ export class AccessRules extends FetchableDocument {
    * ===========================================================================
    */
   protected async fetchDocument() {
-    const [publicAccess, agentAccess] = await Promise.all([
-      universalAccess.getPublicAccess(this.resource.uri, {
-        fetch: this.fetch,
-      }),
-      universalAccess.getAgentAccessAll(this.resource.uri, {
-        fetch: this.fetch,
-      }),
-    ]);
-    this._publicAccess = publicAccess || {
-      read: false,
-      write: false,
-      append: false,
-      controlRead: false,
-      controlWrite: false,
-    };
-    this._agentAccess = agentAccess || {};
-    return undefined;
+    try {
+      const [publicAccess, agentAccess] = await Promise.all([
+        universalAccess.getPublicAccess(this.resource.uri, {
+          fetch: this.fetch,
+        }),
+        universalAccess.getAgentAccessAll(this.resource.uri, {
+          fetch: this.fetch,
+        }),
+      ]);
+      this._publicAccess = publicAccess || {
+        read: false,
+        write: false,
+        append: false,
+        controlRead: false,
+        controlWrite: false,
+      };
+      this._agentAccess = agentAccess || {};
+      return undefined;
+    } catch (err: unknown) {
+      if (typeof err === "object" && (err as Error).message) {
+        this.setError(new DocumentError(this, (err as Error).message));
+      }
+      this.setError(new DocumentError(this, "Error Fetching Access Rules"));
+    }
   }
 }

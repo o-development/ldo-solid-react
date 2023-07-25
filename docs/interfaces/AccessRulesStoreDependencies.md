@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:14](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L14)
+[lib/document/accessRules/AccessRules.ts:15](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L15)
 
 ___
 
@@ -72,4 +72,4 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:5](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L5)
+[lib/document/FetchableDocument.ts:5](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L5)

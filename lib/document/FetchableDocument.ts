@@ -63,6 +63,10 @@ export abstract class FetchableDocument extends EventEmitter {
     this.emitStateUpdate();
   }
 
+  async reload() {
+    return this.read();
+  }
+
   protected abstract fetchDocument(): Promise<DocumentError | undefined>;
 
   protected beginWrite() {

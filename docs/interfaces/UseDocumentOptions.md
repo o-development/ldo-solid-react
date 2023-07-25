@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[lib/documentHooks/useDocument.ts:10](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/documentHooks/useDocument.ts#L10)
+[lib/documentHooks/useDocument.ts:10](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/documentHooks/useDocument.ts#L10)

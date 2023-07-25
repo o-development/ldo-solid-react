@@ -31,6 +31,7 @@
 - [DataResourceStoreDependencies](interfaces/DataResourceStoreDependencies.md)
 - [DocumentStoreDependencies](interfaces/DocumentStoreDependencies.md)
 - [FetchableDocumentDependencies](interfaces/FetchableDocumentDependencies.md)
+- [LdoProviderProps](interfaces/LdoProviderProps.md)
 - [ResourceDependencies](interfaces/ResourceDependencies.md)
 - [UseDocumentOptions](interfaces/UseDocumentOptions.md)
 - [UseLdoReturn](interfaces/UseLdoReturn.md)
@@ -46,6 +47,7 @@
 
 ### Functions
 
+- [LdoProvider](modules.md#ldoprovider)
 - [SolidAuthProvider](modules.md#solidauthprovider)
 - [useAccessRules](modules.md#useaccessrules)
 - [useBinaryResource](modules.md#usebinaryresource)
@@ -64,7 +66,7 @@
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:11](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L11)
+[lib/document/accessRules/AccessRules.ts:12](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L12)
 
 ___
 
@@ -74,7 +76,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/binaryResource/BinaryResource.ts:4](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/resource/binaryResource/BinaryResource.ts#L4)
+[lib/document/resource/binaryResource/BinaryResource.ts:4](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/binaryResource/BinaryResource.ts#L4)
 
 ## Variables
 
@@ -84,9 +86,32 @@ ___
 
 #### Defined in
 
-[lib/SolidAuthProvider.ts:74](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/SolidAuthProvider.ts#L74)
+[lib/SolidAuthProvider.ts:80](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/SolidAuthProvider.ts#L80)
 
 ## Functions
+
+### LdoProvider
+
+▸ **LdoProvider**(`props`, `context?`): ``null`` \| `ReactElement`<`any`, `any`\>
+
+Main Ldo Provider
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | `PropsWithChildren`<[`LdoProviderProps`](interfaces/LdoProviderProps.md)\> |
+| `context?` | `any` |
+
+#### Returns
+
+``null`` \| `ReactElement`<`any`, `any`\>
+
+#### Defined in
+
+node_modules/@types/react/ts5.0/index.d.ts:521
+
+___
 
 ### SolidAuthProvider
 
@@ -127,7 +152,7 @@ ___
 
 #### Defined in
 
-[lib/documentHooks/useAccessRules.ts:6](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/documentHooks/useAccessRules.ts#L6)
+[lib/documentHooks/useAccessRules.ts:6](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/documentHooks/useAccessRules.ts#L6)
 
 ___
 
@@ -148,7 +173,7 @@ ___
 
 #### Defined in
 
-[lib/documentHooks/useBinaryResource.ts:4](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/documentHooks/useBinaryResource.ts#L4)
+[lib/documentHooks/useBinaryResource.ts:4](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/documentHooks/useBinaryResource.ts#L4)
 
 ___
 
@@ -169,7 +194,7 @@ ___
 
 #### Defined in
 
-[lib/documentHooks/useContainerResource.ts:4](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/documentHooks/useContainerResource.ts#L4)
+[lib/documentHooks/useContainerResource.ts:4](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/documentHooks/useContainerResource.ts#L4)
 
 ___
 
@@ -190,7 +215,7 @@ ___
 
 #### Defined in
 
-[lib/documentHooks/useDataResource.ts:4](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/documentHooks/useDataResource.ts#L4)
+[lib/documentHooks/useDataResource.ts:4](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/documentHooks/useDataResource.ts#L4)
 
 ___
 
@@ -219,7 +244,7 @@ ___
 
 #### Defined in
 
-[lib/documentHooks/useDocument.ts:13](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/documentHooks/useDocument.ts#L13)
+[lib/documentHooks/useDocument.ts:13](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/documentHooks/useDocument.ts#L13)
 
 ___
 
@@ -233,7 +258,7 @@ ___
 
 #### Defined in
 
-[lib/useLdo.ts:36](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L36)
+[lib/useLdo.ts:36](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L36)
 
 ___
 
@@ -247,7 +272,7 @@ ___
 
 #### Defined in
 
-[lib/util/createGlobalHook.tsx:11](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/util/createGlobalHook.tsx#L11)
+[lib/util/createGlobalHook.tsx:11](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/util/createGlobalHook.tsx#L11)
 
 ___
 
@@ -274,4 +299,4 @@ ___
 
 #### Defined in
 
-[lib/ldoHooks/useSubject.ts:13](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/ldoHooks/useSubject.ts#L13)
+[lib/ldoHooks/useSubject.ts:13](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/ldoHooks/useSubject.ts#L13)

@@ -1,6 +1,6 @@
 {
   "name": "ldo-solid-react",
-  "version": "0.0.3",
+  "version": "0.0.9-alpha.1",
   "description": "A React library for LDO and Solid",
   "main": "dist/index.js",
   "scripts": {
@@ -73,7 +73,7 @@
     "jsonld-dataset-proxy": "^1.2.3",
     "ldo": "^1.0.3",
     "o-dataset-pack": "^0.2.14",
-    "solid-authn-react-native": "^2.0.2",
+    "solid-authn-react-native": "^2.0.3",
     "stream": "^0.0.2"
   }
 }

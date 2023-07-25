@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[lib/useLdo.ts:29](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L29)
+[lib/useLdo.ts:29](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L29)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[lib/useLdo.ts:33](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L33)
+[lib/useLdo.ts:33](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L33)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[lib/useLdo.ts:31](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L31)
+[lib/useLdo.ts:31](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L31)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[lib/useLdo.ts:32](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L32)
+[lib/useLdo.ts:32](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L32)
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-[lib/useLdo.ts:30](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L30)
+[lib/useLdo.ts:30](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L30)
 
 ## Methods
 
@@ -149,7 +149,7 @@ ___
 
 #### Defined in
 
-[lib/useLdo.ts:22](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L22)
+[lib/useLdo.ts:22](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L22)
 
 ___
 
@@ -169,7 +169,7 @@ ___
 
 #### Defined in
 
-[lib/useLdo.ts:23](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L23)
+[lib/useLdo.ts:23](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L23)
 
 ___
 
@@ -197,4 +197,4 @@ ___
 
 #### Defined in
 
-[lib/useLdo.ts:24](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/useLdo.ts#L24)
+[lib/useLdo.ts:24](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/useLdo.ts#L24)

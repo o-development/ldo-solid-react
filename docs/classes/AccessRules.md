@@ -61,6 +61,7 @@
 - [prependOnceListener](AccessRules.md#prependoncelistener)
 - [rawListeners](AccessRules.md#rawlisteners)
 - [read](AccessRules.md#read)
+- [reload](AccessRules.md#reload)
 - [removeAllListeners](AccessRules.md#removealllisteners)
 - [removeListener](AccessRules.md#removelistener)
 - [setError](AccessRules.md#seterror)
@@ -90,7 +91,7 @@
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:23](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L23)
+[lib/document/accessRules/AccessRules.ts:24](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L24)
 
 ## Properties
 
@@ -100,7 +101,7 @@
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:20](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L20)
+[lib/document/accessRules/AccessRules.ts:21](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L21)
 
 ___
 
@@ -114,7 +115,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:13](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L13)
+[lib/document/FetchableDocument.ts:13](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L13)
 
 ___
 
@@ -128,7 +129,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:14](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L14)
+[lib/document/FetchableDocument.ts:14](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L14)
 
 ___
 
@@ -142,7 +143,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:11](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L11)
+[lib/document/FetchableDocument.ts:11](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L11)
 
 ___
 
@@ -156,7 +157,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:12](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L12)
+[lib/document/FetchableDocument.ts:12](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L12)
 
 ___
 
@@ -166,7 +167,7 @@ ___
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:19](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L19)
+[lib/document/accessRules/AccessRules.ts:20](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L20)
 
 ___
 
@@ -176,7 +177,7 @@ ___
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:21](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L21)
+[lib/document/accessRules/AccessRules.ts:22](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L22)
 
 ___
 
@@ -186,7 +187,7 @@ ___
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:18](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L18)
+[lib/document/accessRules/AccessRules.ts:19](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L19)
 
 ___
 
@@ -319,7 +320,7 @@ node_modules/@types/node/ts4.8/events.d.ts:319
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:40](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L40)
+[lib/document/accessRules/AccessRules.ts:41](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L41)
 
 ___
 
@@ -337,7 +338,7 @@ FetchableDocument.didInitialFetch
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:33](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L33)
+[lib/document/FetchableDocument.ts:33](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L33)
 
 ___
 
@@ -355,7 +356,7 @@ FetchableDocument.error
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:37](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L37)
+[lib/document/FetchableDocument.ts:37](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L37)
 
 ___
 
@@ -382,7 +383,7 @@ ___
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:44](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L44)
+[lib/document/accessRules/AccessRules.ts:45](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L45)
 
 ___
 
@@ -404,7 +405,7 @@ FetchableDocument.isLoading
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:29](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L29)
+[lib/document/FetchableDocument.ts:29](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L29)
 
 ___
 
@@ -422,7 +423,7 @@ FetchableDocument.isWriting
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:41](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L41)
+[lib/document/FetchableDocument.ts:41](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L41)
 
 ___
 
@@ -440,7 +441,7 @@ FetchableDocument.onDocumentError
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:45](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L45)
+[lib/document/FetchableDocument.ts:45](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L45)
 
 ___
 
@@ -458,7 +459,7 @@ Getters
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:36](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L36)
+[lib/document/accessRules/AccessRules.ts:37](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L37)
 
 ## Methods
 
@@ -507,7 +508,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:68](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L68)
+[lib/document/FetchableDocument.ts:72](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L72)
 
 ___
 
@@ -594,7 +595,7 @@ Emitter Information
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:92](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L92)
+[lib/document/FetchableDocument.ts:96](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L96)
 
 ___
 
@@ -618,7 +619,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:73](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L73)
+[lib/document/FetchableDocument.ts:77](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L77)
 
 ___
 
@@ -679,7 +680,7 @@ Methods
 
 #### Defined in
 
-[lib/document/accessRules/AccessRules.ts:53](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRules.ts#L53)
+[lib/document/accessRules/AccessRules.ts:54](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRules.ts#L54)
 
 ___
 
@@ -830,7 +831,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:100](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L100)
+[lib/document/FetchableDocument.ts:104](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L104)
 
 ___
 
@@ -910,7 +911,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:96](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L96)
+[lib/document/FetchableDocument.ts:100](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L100)
 
 ___
 
@@ -1124,7 +1125,25 @@ Methods
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:54](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L54)
+[lib/document/FetchableDocument.ts:54](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L54)
+
+___
+
+### reload
+
+▸ **reload**(): `Promise`<`void`\>
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+[FetchableDocument](FetchableDocument.md).[reload](FetchableDocument.md#reload)
+
+#### Defined in
+
+[lib/document/FetchableDocument.ts:66](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L66)
 
 ___
 
@@ -1293,7 +1312,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:81](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L81)
+[lib/document/FetchableDocument.ts:85](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L85)
 
 ___
 

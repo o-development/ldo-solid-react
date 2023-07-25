@@ -48,7 +48,7 @@
 
 #### Defined in
 
-[lib/document/errors/DocumentFetchError.ts:7](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/errors/DocumentFetchError.ts#L7)
+[lib/document/errors/DocumentFetchError.ts:7](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/errors/DocumentFetchError.ts#L7)
 
 ## Properties
 
@@ -62,7 +62,7 @@
 
 #### Defined in
 
-[lib/document/errors/DocumentError.ts:4](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/errors/DocumentError.ts#L4)
+[lib/document/errors/DocumentError.ts:4](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/errors/DocumentError.ts#L4)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[lib/document/errors/DocumentFetchError.ts:5](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/errors/DocumentFetchError.ts#L5)
+[lib/document/errors/DocumentFetchError.ts:5](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/errors/DocumentFetchError.ts#L5)
 
 ___
 

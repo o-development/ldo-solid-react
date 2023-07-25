@@ -5,6 +5,7 @@ import {
   login as libraryLogin,
   getDefaultSession,
   logout as libraryLogout,
+  fetch as libraryFetch,
 } from "solid-authn-react-native";
 
 import { createGlobalHook } from "./util/createGlobalHook";
@@ -14,6 +15,7 @@ interface AuthGlobalHookReturn {
   login: (issuer: string) => Promise<void>;
   logout: () => Promise<void>;
   signUp: (issuer: string) => Promise<void>;
+  fetch: typeof fetch;
   session: ISessionInfo;
   ranInitialAuthCheck: boolean;
 }
@@ -32,15 +34,18 @@ function useAuthGlobalHookFunc(): AuthGlobalHookReturn {
     setRanInitialAuthCheck(true);
   }, []);
 
-  const login = useCallback(async (issuer: string) => {
-    await libraryLogin({
-      oidcIssuer: issuer,
-      // TODO: this ties this to in-browser use
-      redirectUrl: window.location.href,
-      clientName: "PalPod",
-    });
-    setSession({ ...getDefaultSession().info });
-  }, []);
+  const login = useCallback(
+    async (issuer: string, clientName = "Solid App") => {
+      await libraryLogin({
+        oidcIssuer: issuer,
+        // TODO: this ties this to in-browser use
+        redirectUrl: window.location.href,
+        clientName,
+      });
+      setSession({ ...getDefaultSession().info });
+    },
+    []
+  );
 
   const logout = useCallback(async () => {
     await libraryLogout();
@@ -64,6 +69,7 @@ function useAuthGlobalHookFunc(): AuthGlobalHookReturn {
       signUp,
       session,
       ranInitialAuthCheck,
+      fetch: libraryFetch,
     }),
     [login, logout, ranInitialAuthCheck, runInitialAuthCheck, session, signUp]
   );

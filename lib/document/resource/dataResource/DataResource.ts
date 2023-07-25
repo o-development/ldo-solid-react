@@ -109,7 +109,7 @@ export class DataResource extends Resource {
         "Content-Type": "application/sparql-update",
       },
     });
-    if (response.status !== 200) {
+    if (response.status < 200 || response.status > 299) {
       // Handle Error by rollback
       transactionalDataset.rollback();
       this.updateManager.notifyListenersOfChanges(changes);

@@ -43,7 +43,7 @@
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:15](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/DocumentStore.ts#L15)
+[lib/document/DocumentStore.ts:15](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L15)
 
 ## Properties
 
@@ -57,7 +57,7 @@
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:13](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/DocumentStore.ts#L13)
+[lib/document/DocumentStore.ts:13](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L13)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:12](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/DocumentStore.ts#L12)
+[lib/document/DocumentStore.ts:12](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L12)
 
 ## Methods
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[lib/document/accessRules/AccessRulesStore.ts:14](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/accessRules/AccessRulesStore.ts#L14)
+[lib/document/accessRules/AccessRulesStore.ts:14](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/accessRules/AccessRulesStore.ts#L14)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:20](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/DocumentStore.ts#L20)
+[lib/document/DocumentStore.ts:20](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L20)
 
 ___
 
@@ -143,4 +143,4 @@ ___
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:33](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/DocumentStore.ts#L33)
+[lib/document/DocumentStore.ts:33](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L33)

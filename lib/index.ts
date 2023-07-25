@@ -37,4 +37,5 @@ export * from "./ldoHooks/useSubject";
 
 // export
 export * from "./useLdo";
+export * from "./LdoProvider";
 export * from "./SolidAuthProvider";

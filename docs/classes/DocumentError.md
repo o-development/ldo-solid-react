@@ -48,7 +48,7 @@ Error.constructor
 
 #### Defined in
 
-[lib/document/errors/DocumentError.ts:6](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/errors/DocumentError.ts#L6)
+[lib/document/errors/DocumentError.ts:6](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/errors/DocumentError.ts#L6)
 
 ## Properties
 
@@ -58,7 +58,7 @@ Error.constructor
 
 #### Defined in
 
-[lib/document/errors/DocumentError.ts:4](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/errors/DocumentError.ts#L4)
+[lib/document/errors/DocumentError.ts:4](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/errors/DocumentError.ts#L4)
 
 ___
 

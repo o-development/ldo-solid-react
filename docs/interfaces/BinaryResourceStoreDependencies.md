@@ -31,7 +31,7 @@ BinaryResourceDependencies.accessRulesStore
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:12](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/resource/Resource.ts#L12)
+[lib/document/resource/Resource.ts:12](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L12)
 
 ___
 
@@ -45,7 +45,7 @@ BinaryResourceDependencies.containerResourceStore
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:13](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/resource/Resource.ts#L13)
+[lib/document/resource/Resource.ts:13](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L13)
 
 ___
 
@@ -74,7 +74,7 @@ BinaryResourceDependencies.fetch
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:11](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/resource/Resource.ts#L11)
+[lib/document/resource/Resource.ts:11](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L11)
 
 ___
 
@@ -102,4 +102,4 @@ BinaryResourceDependencies.onDocumentError
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:5](https://github.com/o-development/ldo-solid-react/blob/2b81d9a/lib/document/FetchableDocument.ts#L5)
+[lib/document/FetchableDocument.ts:5](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L5)
