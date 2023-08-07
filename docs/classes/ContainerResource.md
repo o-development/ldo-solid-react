@@ -73,6 +73,7 @@
 - [read](ContainerResource.md#read)
 - [reload](ContainerResource.md#reload)
 - [removeAllListeners](ContainerResource.md#removealllisteners)
+- [removeContainedResources](ContainerResource.md#removecontainedresources)
 - [removeListener](ContainerResource.md#removelistener)
 - [setError](ContainerResource.md#seterror)
 - [setMaxListeners](ContainerResource.md#setmaxlisteners)
@@ -103,7 +104,7 @@
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResource.ts:17](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L17)
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:17](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L17)
 
 ## Properties
 
@@ -113,7 +114,7 @@
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResource.ts:14](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L14)
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:14](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L14)
 
 ___
 
@@ -127,7 +128,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:13](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L13)
+[lib/document/FetchableDocument.ts:13](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L13)
 
 ___
 
@@ -141,7 +142,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:14](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L14)
+[lib/document/FetchableDocument.ts:14](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L14)
 
 ___
 
@@ -155,7 +156,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:11](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L11)
+[lib/document/FetchableDocument.ts:11](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L11)
 
 ___
 
@@ -169,7 +170,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:12](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L12)
+[lib/document/FetchableDocument.ts:12](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L12)
 
 ___
 
@@ -179,7 +180,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResource.ts:15](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L15)
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:15](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L15)
 
 ___
 
@@ -193,7 +194,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:17](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L17)
+[lib/document/resource/Resource.ts:17](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L17)
 
 ___
 
@@ -330,7 +331,7 @@ DataResource.@id
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:39](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L39)
+[lib/document/resource/Resource.ts:39](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L39)
 
 ___
 
@@ -352,7 +353,7 @@ DataResource.accessRules
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:31](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L31)
+[lib/document/resource/Resource.ts:31](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L31)
 
 ___
 
@@ -370,7 +371,7 @@ DataResource.accessRulesStore
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:47](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L47)
+[lib/document/resource/Resource.ts:47](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L47)
 
 ___
 
@@ -384,7 +385,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResource.ts:32](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L32)
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:32](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L32)
 
 ___
 
@@ -402,7 +403,7 @@ DataResource.containerResourceStore
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:51](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L51)
+[lib/document/resource/Resource.ts:51](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L51)
 
 ___
 
@@ -420,7 +421,7 @@ Getters
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResource.ts:28](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L28)
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:28](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L28)
 
 ___
 
@@ -434,7 +435,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResource.ts:36](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L36)
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:36](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L36)
 
 ___
 
@@ -456,7 +457,7 @@ DataResource.dataset
 
 #### Defined in
 
-[lib/document/resource/dataResource/DataResource.ts:29](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/DataResource.ts#L29)
+[lib/document/resource/dataResource/DataResource.ts:29](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/DataResource.ts#L29)
 
 ___
 
@@ -474,7 +475,7 @@ DataResource.didInitialFetch
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:33](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L33)
+[lib/document/FetchableDocument.ts:33](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L33)
 
 ___
 
@@ -492,7 +493,7 @@ DataResource.error
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:37](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L37)
+[lib/document/FetchableDocument.ts:37](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L37)
 
 ___
 
@@ -523,7 +524,7 @@ DataResource.fetch
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:43](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L43)
+[lib/document/resource/Resource.ts:43](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L43)
 
 ___
 
@@ -545,7 +546,7 @@ DataResource.isLoading
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:29](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L29)
+[lib/document/FetchableDocument.ts:29](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L29)
 
 ___
 
@@ -563,7 +564,7 @@ DataResource.isWriting
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:41](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L41)
+[lib/document/FetchableDocument.ts:41](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L41)
 
 ___
 
@@ -581,7 +582,7 @@ DataResource.onDocumentError
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:45](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L45)
+[lib/document/FetchableDocument.ts:45](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L45)
 
 ___
 
@@ -599,7 +600,7 @@ DataResource.parentContainer
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:35](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L35)
+[lib/document/resource/Resource.ts:35](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L35)
 
 ___
 
@@ -617,7 +618,7 @@ DataResource.updateManager
 
 #### Defined in
 
-[lib/document/resource/dataResource/DataResource.ts:33](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/DataResource.ts#L33)
+[lib/document/resource/dataResource/DataResource.ts:33](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/DataResource.ts#L33)
 
 ## Methods
 
@@ -637,7 +638,7 @@ DataResource.updateManager
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResource.ts:76](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L76)
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:76](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L76)
 
 ___
 
@@ -686,7 +687,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:72](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L72)
+[lib/document/FetchableDocument.ts:72](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L72)
 
 ___
 
@@ -708,7 +709,7 @@ Methods
 
 #### Defined in
 
-[lib/document/resource/dataResource/DataResource.ts:42](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/DataResource.ts#L42)
+[lib/document/resource/dataResource/DataResource.ts:42](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/DataResource.ts#L42)
 
 ___
 
@@ -730,7 +731,7 @@ Methods
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:60](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L60)
+[lib/document/resource/Resource.ts:60](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L60)
 
 ___
 
@@ -817,7 +818,7 @@ Emitter Information
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:96](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L96)
+[lib/document/FetchableDocument.ts:96](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L96)
 
 ___
 
@@ -841,7 +842,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:77](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L77)
+[lib/document/FetchableDocument.ts:77](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L77)
 
 ___
 
@@ -902,7 +903,7 @@ Methods
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResource.ts:44](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L44)
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:44](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L44)
 
 ___
 
@@ -1053,7 +1054,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:104](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L104)
+[lib/document/FetchableDocument.ts:104](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L104)
 
 ___
 
@@ -1133,7 +1134,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:100](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L100)
+[lib/document/FetchableDocument.ts:100](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L100)
 
 ___
 
@@ -1347,7 +1348,7 @@ Methods
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:54](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L54)
+[lib/document/FetchableDocument.ts:54](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L54)
 
 ___
 
@@ -1365,7 +1366,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:66](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L66)
+[lib/document/FetchableDocument.ts:66](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L66)
 
 ___
 
@@ -1402,6 +1403,26 @@ v0.1.26
 #### Defined in
 
 node_modules/@types/node/ts4.8/events.d.ts:551
+
+___
+
+### removeContainedResources
+
+▸ **removeContainedResources**(...`resources`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...resources` | [`Resource`](Resource.md)[] |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[lib/document/resource/dataResource/containerResource/ContainerResource.ts:90](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResource.ts#L90)
 
 ___
 
@@ -1534,7 +1555,7 @@ ___
 
 #### Defined in
 
-[lib/document/FetchableDocument.ts:85](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/FetchableDocument.ts#L85)
+[lib/document/FetchableDocument.ts:85](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/FetchableDocument.ts#L85)
 
 ___
 
@@ -1593,7 +1614,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/dataResource/DataResource.ts:92](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/DataResource.ts#L92)
+[lib/document/resource/dataResource/DataResource.ts:92](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/DataResource.ts#L92)
 
 ___
 
@@ -1718,7 +1739,7 @@ Takes in a URL and will normalize it to the document it's fetching
 
 #### Defined in
 
-[lib/document/resource/Resource.ts:86](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/Resource.ts#L86)
+[lib/document/resource/Resource.ts:87](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/Resource.ts#L87)
 
 ___
 

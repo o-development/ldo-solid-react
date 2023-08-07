@@ -1,6 +1,6 @@
 {
   "name": "ldo-solid-react",
-  "version": "0.0.9-alpha.1",
+  "version": "0.0.9-alpha.4",
   "description": "A React library for LDO and Solid",
   "main": "dist/index.js",
   "scripts": {

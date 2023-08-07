@@ -86,4 +86,17 @@ export class ContainerResource extends DataResource {
       this.emitStateUpdate();
     }
   }
+
+  public removeContainedResources(...resources: Resource[]) {
+    let someResourceUpdated = false;
+    resources.forEach((resource) => {
+      if (this._contains.has(resource)) {
+        someResourceUpdated = true;
+        this._contains.delete(resource);
+      }
+    });
+    if (someResourceUpdated) {
+      this.emitStateUpdate();
+    }
+  }
 }

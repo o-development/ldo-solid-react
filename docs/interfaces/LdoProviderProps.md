@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[lib/LdoProvider.tsx:19](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/LdoProvider.tsx#L19)
+[lib/LdoProvider.tsx:19](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/LdoProvider.tsx#L19)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[lib/LdoProvider.tsx:18](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/LdoProvider.tsx#L18)
+[lib/LdoProvider.tsx:18](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/LdoProvider.tsx#L18)
 
 ___
 
@@ -88,4 +88,4 @@ ___
 
 #### Defined in
 
-[lib/LdoProvider.tsx:20](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/LdoProvider.tsx#L20)
+[lib/LdoProvider.tsx:20](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/LdoProvider.tsx#L20)

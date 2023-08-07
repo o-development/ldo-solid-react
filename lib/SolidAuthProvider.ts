@@ -10,6 +10,8 @@ import {
 
 import { createGlobalHook } from "./util/createGlobalHook";
 
+const PRE_REDIRECT_URI = "PRE_REDIRECT_URI";
+
 interface AuthGlobalHookReturn {
   runInitialAuthCheck: () => Promise<void>;
   login: (issuer: string) => Promise<void>;
@@ -27,15 +29,29 @@ function useAuthGlobalHookFunc(): AuthGlobalHookReturn {
   const [ranInitialAuthCheck, setRanInitialAuthCheck] = useState(false);
 
   const runInitialAuthCheck = useCallback(async () => {
+    // TODO: Change this to dependency injection so it works in React Native
+    if (!window.localStorage.getItem(PRE_REDIRECT_URI)) {
+      window.localStorage.setItem(PRE_REDIRECT_URI, window.location.href);
+    }
+
     await handleIncomingRedirect({
       restorePreviousSession: true,
     });
     setSession({ ...getDefaultSession().info });
+
+    window.history.replaceState(
+      {},
+      "",
+      window.localStorage.getItem(PRE_REDIRECT_URI)
+    );
+    window.localStorage.removeItem(PRE_REDIRECT_URI);
+
     setRanInitialAuthCheck(true);
   }, []);
 
   const login = useCallback(
     async (issuer: string, clientName = "Solid App") => {
+      window.localStorage.setItem(PRE_REDIRECT_URI, window.location.href);
       await libraryLogin({
         oidcIssuer: issuer,
         // TODO: this ties this to in-browser use

@@ -62,8 +62,9 @@ export abstract class Resource extends FetchableDocument {
     const response = await this.fetch(this.uri, {
       method: "DELETE",
     });
-    if (response.status === 200) {
+    if (response.status >= 200 && response.status < 300) {
       this.endWrite();
+      this.parentContainer?.removeContainedResources(this);
       return;
     }
     this.endWrite(

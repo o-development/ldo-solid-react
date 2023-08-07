@@ -45,7 +45,7 @@
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:15](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L15)
+[lib/document/DocumentStore.ts:15](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/DocumentStore.ts#L15)
 
 ## Properties
 
@@ -59,7 +59,7 @@
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:13](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L13)
+[lib/document/DocumentStore.ts:13](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/DocumentStore.ts#L13)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:12](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L12)
+[lib/document/DocumentStore.ts:12](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/DocumentStore.ts#L12)
 
 ## Methods
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts:20](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts#L20)
+[lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts:20](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts#L20)
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 #### Defined in
 
-[lib/document/DocumentStore.ts:20](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/DocumentStore.ts#L20)
+[lib/document/DocumentStore.ts:20](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/DocumentStore.ts#L20)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts:28](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts#L28)
+[lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts:28](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts#L28)
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts:24](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts#L24)
+[lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts:24](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts#L24)
 
 ___
 
@@ -187,4 +187,4 @@ Returns the parent container URI
 
 #### Defined in
 
-[lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts:36](https://github.com/o-development/ldo-solid-react/blob/29a7f21/lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts#L36)
+[lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts:36](https://github.com/o-development/ldo-solid-react/blob/04d2e11/lib/document/resource/dataResource/containerResource/ContainerResourceStore.ts#L36)
