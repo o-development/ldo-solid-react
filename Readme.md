@@ -1,3 +1,5 @@
+> :warning: **This repository is archived**: It's contents have been moved to a new [monorepo](https://github.com/o-development/ldo/).
+
 # Solid-Dataset
 
 Pre-alpha
